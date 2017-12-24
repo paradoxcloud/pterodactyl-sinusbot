@@ -18,8 +18,6 @@ chmod 0755 TeamSpeak3-Client-linux_amd64-3.0.18.2.run
 # Needed silent installation method
 ./TeamSpeak3-Client-linux_amd64-3.0.18.2.run
 
-
-
 cp plugin/libsoundbot_plugin.so TeamSpeak3-Client-linux_amd64/plugins/
 chmod 755 sinusbot
 
