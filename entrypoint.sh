@@ -16,6 +16,7 @@ wget http://api.paradox.cloud/packages/TeamSpeak3-Client-linux_amd64-3.0.18.2.ta
 tar xfvz TeamSpeak3-Client-linux_amd64-3.0.18.2.tar.gz
 
 cp plugin/libsoundbot_plugin.so TeamSpeak3-Client-linux_amd64/plugins/
+chmod 755 sinusbot
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
