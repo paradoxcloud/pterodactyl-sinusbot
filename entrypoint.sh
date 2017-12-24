@@ -12,7 +12,7 @@ tar -xjf sinusbot-beta.tar.bz2
 cp config.ini.dist config.ini
 
 # Get Teamspeak
-curl http://api.paradox.cloud/packages/TeamSpeak3-Client-linux_amd64-3.0.18.2.tar.gz
+curl -O http://api.paradox.cloud/packages/TeamSpeak3-Client-linux_amd64-3.0.18.2.tar.gz
 tar xfvz TeamSpeak3-Client-linux_amd64-3.0.18.2.tar.gz
 
 cp plugin/libsoundbot_plugin.so TeamSpeak3-Client-linux_amd64/plugins/
