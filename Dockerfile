@@ -5,7 +5,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt-get update \
             && apt-get upgrade -y \
-            && apt-get install -y tar x11vnc xvfb libxcursor1 ca-certificates bzip2 libnss3 libegl1-mesa x11-xkb-utils libasound2 libglib2.0-0 \
+            && apt-get install -y curl tar x11vnc xvfb libxcursor1 ca-certificates bzip2 libnss3 libegl1-mesa x11-xkb-utils libasound2 libglib2.0-0 \
             && update-ca-certificates \
             && useradd -m -d /home/container container
 
