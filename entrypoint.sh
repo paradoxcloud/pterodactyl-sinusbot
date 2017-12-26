@@ -6,21 +6,14 @@ cd /home/container
 # Make internal Docker IP address available to processes.
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
-# Get SinusBot
-curl -O https://www.sinusbot.com/dl/sinusbot-beta.tar.bz2
-tar -xjf sinusbot-beta.tar.bz2
-cp config.ini.dist config.ini
-
-# Get Teamspeak
-curl -O http://api.paradox.cloud/packages/TeamSpeak3-Client-linux_amd64-3.0.18.2.tar.gz
-tar xfvz TeamSpeak3-Client-linux_amd64-3.0.18.2.tar.gz
-
-cp plugin/libsoundbot_plugin.so TeamSpeak3-Client-linux_amd64/plugins/
-chmod 755 sinusbot
-
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 # Run the Server
 ${MODIFIED_STARTUP}
+
+if [ $? -ne 0 ]; then
+    echo "PTDL_CONTAINER_ERR: There was an error while attempting to run the start command."
+    exit 1
+fi
