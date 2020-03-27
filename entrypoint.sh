@@ -9,8 +9,6 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 # Check Youtube-DL for updates
 ./youtube-dl -U
 
-pwd
-
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
